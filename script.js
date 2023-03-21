@@ -7,7 +7,7 @@ var timerEl = document.querySelector(".timer-count");
  var indexOfCurrentQuestion = 0;
 
  startButtonEl.addEventListener('click', function (event) {
-     // Start timer
+  
      timer = setInterval(function () {
          secondsLeft--;
          timerEl.textContent = secondsLeft;
