@@ -4,16 +4,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="assets/style.css" />
-    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <title>Code Quiz Challenge</title>
 </head>
 <body>
-    <button class="start-button">Start Quiz</button>
+   <header>
+    <nav>
+        <div class="highscores"><a href="./highscores.html">View Highscores</a></div>
+        <div>Time: <span class="timer-count">75</span>
+        </div>
+    </nav>
+   </header>
+   <main>
 
-    <section>
-        <div class="timer-count">75</div>
+    <div class="code-challenge">
+        <h1>Coding Quiz Challenge</h1>
+        <p>Answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by 15 seconds!</p>
+        <button>Start Quiz</button>
+    </div>
+
+    <section class="quiz-questions">
+        <div>
+            
+        </div>
     </section>
 
-    <script src="assets/script.js"></script>
+    <div class="quiz-complete">
+        <h1 class="all-done">All done!</h1>
+        <p>Your final score is .</p>
+        <p><em>Enter Initials:</em>
+        <input class="initials">
+        <button class="submit-score">Submit</button></p>
+    </div>
+        
+    </main>
+
+    <footer>
+        <h4>Made by Brian Autieri 2023</h4>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
