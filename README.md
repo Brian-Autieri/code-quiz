@@ -2,7 +2,7 @@
 
 ## Description
 
-The purpose of this project was to create a code quiz so that users can test their knowledge of JavaScript. The goal of this quiz is to get a highscore by answering as many questions correctly before the time runs out. When the user clicks on the "Start Quiz" button, they are presented with a series of multiple choice questions. When a question is answered correctly, the webpage will display "Correct!" and if the wrong answer is selected, "Wrong!" will appear and deduct 15 seconds from the timer.
+The purpose of this project was to create a code quiz so that users can test their knowledge of JavaScript. The goal of this quiz is to get a highscore by answering as many multiple choice questions correctly before the time runs out. When the user clicks on the "Start Quiz" button, they are presented with a series of multiple choice questions and a timer counting down from 75 seconds. When a question is answered correctly, the webpage will display "Correct!" and if the wrong answer is selected, "Wrong!" will appear and deduct 15 seconds from the timer.
 
 ## Usage
 
