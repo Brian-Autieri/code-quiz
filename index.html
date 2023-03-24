@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,28 +8,52 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
     <title>Code Quiz Challenge</title>
 </head>
+
 <body>
-   <header>
-    <nav>
-        <div class="highscores"><a href="highscores.html">View Highscores</a></div>
-        <div>Time: <span class="timer-count">75</span>
-        </div>
-    </nav>
-   </header>
-   <main>
+    <header>
+        <nav>
+            <div class="highscores"><a href="highscores.html">View Highscores</a></div>
+            <div>Time: <span class="timer-count">75</span>
+            </div>
+        </nav>
+    </header>
 
-    <div class="code-challenge">
-        <h1>Coding Quiz Challenge</h1>
-        <p>Answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by 15 seconds!</p>
-        <button>Start Quiz</button>
-    </div>
-
-    <section class="quiz-questions">
-        <div>
-            
+        <div class="code-challenge">
+            <h1>Coding Quiz Challenge</h1>
+            <p>Answer the following code-related questions within the time limit. Keep in mind that incorrect answers
+                will penalize your score/time by 15 seconds!</p>
+            <button class="start-quiz">Start Quiz</button>
         </div>
-    </section>
-        
+
+        <main>
+
+        <section class="quiz-questions hide" id="quiz-questions">
+            <h1 class="questions" id="questions"></h1>
+            <div class="answer" id="answer">
+                <div class="choices">
+                    <button id="1"></button>
+                </div>
+                <div class="choices">
+                    <button id="2"></button>
+                </div>
+                <div class="choices">
+                    <button id="3"></button>
+                </div>
+                <div class="choices">
+                    <button id="4"></button>
+                </div>
+            </div>
+        </section>
+
+        <div class="quiz-complete hide" id="quiz-complete">
+            <h1 class="all-done">All done!</h1>
+            <p>Your final score is <span class="score"></span></p>
+            <p><em>Enter Initials:</em>
+                <input type="text" class="initials">
+                <button class="submit-score">Submit</button>
+            </p>
+        </div>
+
     </main>
 
     <footer>
@@ -37,4 +62,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
