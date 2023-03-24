@@ -63,6 +63,7 @@ function renderNextQuestion() {
   document.querySelector("main").innerHTML = "";
   var question = questions[indexOfCurrentQuestion]
   var questionContainerEl = document.createElement("div");
+  questionContainerEl.classList.add('buttonContainer');
 
   var titleEl = document.createElement("h2");
   titleEl.textContent = question.title;
@@ -85,13 +86,16 @@ function renderNextQuestion() {
   contentEl.innerHTML = "";
   var currentQuestion = questions[indexOfCurrentQuestion];
   var headingEl = document.createElement("h2");
+  var buttonContainer = document.createElement('div');
   headingEl.textContent = currentQuestion.title;
   contentEl.append(headingEl);
+  contentEl.append(buttonContainer);
+  buttonContainer.classList.add('buttonContainer');
 
   for (var i = 0; i < currentQuestion.choices.length; i++) {
     var buttonEl = document.createElement("button");
     buttonEl.setAttribute("class", "choice");
     buttonEl.textContent = currentQuestion.choices[i];
-    contentEl.appendChild(buttonEl);
+    buttonContainer.appendChild(buttonEl);
   }
 }
