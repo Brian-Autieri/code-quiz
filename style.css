@@ -66,6 +66,8 @@ button {
 .quiz-complete {
     font-size: 15px;
     align-content: center;
+    text-align: center;
+    padding: 100px 0 10px 0;
 }
 
 .submit-score {
@@ -105,4 +107,24 @@ footer h4 {
     position: fixed;
     bottom: 0;
     width: 100%;
+}
+
+.feedback {
+    background-color: rgb(100, 13, 100);
+    color: white;
+    font-size: 20px;
+    padding: 5px;
+    border-radius: 10px;
+    width: 120px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.quiz-questions {
+    font-size: 15px;
+    text-align: center;
+    padding: 100px 0 10px 0;
 }
