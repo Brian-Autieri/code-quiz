@@ -13,21 +13,19 @@
     <header>
         <nav>
             <div class="highscores"><a href="highscores.html">View Highscores</a></div>
-            <div>Time: <span class="timer-count">75</span>
-            </div>
+            <div>Time: <span class="timer-count">75</span></div>
         </nav>
     </header>
 
-        <div class="code-challenge">
-            <h1>Coding Quiz Challenge</h1>
-            <p>Answer the following code-related questions within the time limit. Keep in mind that incorrect answers
-                will penalize your score/time by 15 seconds!</p>
-            <button class="start-quiz start-btn">Start Quiz</button>
-        </div>
+    <div class="code-challenge">
+        <h1>Coding Quiz Challenge</h1>
+        <p>Answer the following code-related questions within the time limit. Keep in mind that incorrect answers
+            will penalize your score/time by 10 seconds!</p>
+        <button class="start-quiz start-btn">Start Quiz</button>
+    </div>
 
-        <main>
-
-        <section class="quiz-questions hide code-challenge" id="quiz-questions">
+    <main>
+        <section class="quiz-questions hide" id="quiz-questions">
             <h1 class="questions" id="questions"></h1>
             <div class="answer" id="answer">
                 <div class="choices">
@@ -54,6 +52,7 @@
             </p>
         </div>
 
+        <div class="feedback" id="feedback"></div>
     </main>
 
     <footer>
