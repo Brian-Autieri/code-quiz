@@ -113,5 +113,7 @@ function quizComplete() {
   contentEl.classList.add('hide');
   resultsEl.classList.remove('hide');
   feedbackEl.classList.add('hide');
+  scoreEl.textContent = score;
+  initialsEl.value = '';
 }
 
