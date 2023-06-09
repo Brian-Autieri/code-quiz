@@ -1,22 +1,22 @@
 var submitButtonEl = document.querySelector('.submit-score');
 var initialsEl = document.querySelector('.initials');
 var scoreEl = document.querySelector('.score');
-var highscoresEl = document.querySelector('#highscores-list');
+var highScoresEl = document.querySelector('#highscores-list');
 
 submitButtonEl.addEventListener('click', function () {
     var initials = initialsEl.value.trim();
     var score = scoreEl.textContent.trim();
 
     if (initials !== '' && score !== '') {
-        var highscores = JSON.parse(localStorage.getItem('highscores')) || [];
+        var highScores = JSON.parse(localStorage.getItem('highscores')) || [];
 
         var newScore = {
             initials: initials,
             score: score,
         };
 
-        highscores.push(newScore);
-        localStorage.setItem('highscores', JSON.stringify(highscores));
+        highScores.push(newScore);
+        localStorage.setItem('highscores', JSON.stringify(highScores));
 
 
         initialsEl.value = '';
@@ -26,12 +26,12 @@ submitButtonEl.addEventListener('click', function () {
 });
 
 function displayHighscores() {
-    var highscores = JSON.parse(localStorage.getItem('highscores')) || [];
+    var highScores = JSON.parse(localStorage.getItem('highscores')) || [];
 
-    highscores.forEach(function (score) {
+    highScores.forEach(function (score) {
         var listItemEl = document.createElement('li');
         listItemEl.textContent = score.initials + ' - ' + score.score;
-        highscoresEl.appendChild(listItemEl);
+        highScoresEl.appendChild(listItemEl);
     });
 }
 
