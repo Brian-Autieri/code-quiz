@@ -14,7 +14,7 @@ https://brian-autieri.github.io/code-quiz/index.html
 
 ### Webpage Screenshot
 
-![alt text](code-quiz-screenshot.png)
+![alt text](assets/images/code-quiz-screenshot.png)
 
 ## Credits
 
