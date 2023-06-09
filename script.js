@@ -1,27 +1,32 @@
-var codeChallenge = document.querySelector(".code-challenge");
-var startButtonEl = document.querySelector("button");
-var timerEl = document.querySelector(".timer-count");
-var contentEl = document.querySelector(".quiz-questions");
+var codeChallenge = document.querySelector('.code-challenge');
+var startButtonEl = document.querySelector('.start-btn');
+var timerEl = document.querySelector('.timer-count');
+var contentEl = document.querySelector('.quiz-questions');
+var resultsEl = document.querySelector('.quiz-complete');
+var scoreEl = document.querySelector('.score');
+var initialsEl = document.querySelector('.initials');
+var submitButtonEl = document.querySelector('.submit-score');
+var highScoresEl = document.querySelector('.highscores');
+var feedbackEl = document.querySelector('.feedback');
 
 var timer;
 var secondsLeft = 75;
 var indexOfCurrentQuestion = 0;
+var score = 0;
 
-startButtonEl.addEventListener("click", function (event) {
+startButtonEl.addEventListener('click', function (event) {
   timer = setInterval(function () {
     secondsLeft--;
     timerEl.textContent = secondsLeft;
     if (secondsLeft === 0) {
-      clearInterval(timer);
-      timerEl.textContent = "All done!";
       quizComplete();
     }
   }, 1000);
 
-  codeChallenge.classList.add("hide")
-  contentEl.classList.remove("hide")
-  
-  renderNextQuestion()
+  codeChallenge.classList.add('hide');
+  contentEl.classList.remove('hide');
+  feedbackEl.classList.remove('hide');
+  renderNextQuestion();
 });
 
 var questions = [
@@ -60,42 +65,52 @@ var questions = [
 ];
 
 function renderNextQuestion() {
-  document.querySelector("main").innerHTML = "";
-  var question = questions[indexOfCurrentQuestion]
-  var questionContainerEl = document.createElement("div");
-  questionContainerEl.classList.add('buttonContainer');
+  if (indexOfCurrentQuestion === questions.length) {
+    quizComplete();
+    return;
+  }
 
-  var titleEl = document.createElement("h2");
-  titleEl.textContent = question.title;
-  questionContainerEl.appendChild(titleEl);
+  var question = questions[indexOfCurrentQuestion];
+
+  document.getElementById('questions').textContent = question.title;
+
+  var answerChoicesEl = document.getElementById('answer');
+  answerChoicesEl.innerHTML = '';
 
   for (var i = 0; i < question.choices.length; i++) {
-    var optionEl = document.createElement("button");
-    optionEl.textContent = firstQuestion.choices[i];
-    questionContainerEl.appendChild(optionEl);
-  }
+    var choice = question.choices[i];
+    var choiceButtonEl = document.createElement('button');
+    choiceButtonEl.textContent = choice;
+    choiceButtonEl.setAttribute('data-index', i);
 
-  document.querySelector("main").appendChild(questionContainerEl);
+    choiceButtonEl.addEventListener('click', function () {
+      var selectedAnswerIndex = parseInt(this.getAttribute('data-index'));
+      checkAnswer(selectedAnswerIndex);
+    });
+
+    answerChoicesEl.appendChild(choiceButtonEl);
+  }
 }
 
+function checkAnswer(selectedAnswerIndex) {
+  var question = questions[indexOfCurrentQuestion];
 
-renderNextQuestion(questions[1]);
-
-function renderNextQuestion() {
-
-  contentEl.innerHTML = "";
-  var currentQuestion = questions[indexOfCurrentQuestion];
-  var headingEl = document.createElement("h2");
-  var buttonContainer = document.createElement('div');
-  headingEl.textContent = currentQuestion.title;
-  contentEl.append(headingEl);
-  contentEl.append(buttonContainer);
-  buttonContainer.classList.add('buttonContainer');
-
-  for (var i = 0; i < currentQuestion.choices.length; i++) {
-    var buttonEl = document.createElement("button");
-    buttonEl.setAttribute("class", "choice");
-    buttonEl.textContent = currentQuestion.choices[i];
-    buttonContainer.appendChild(buttonEl);
+  if (question.answer === question.choices[selectedAnswerIndex]) {
+    feedbackEl.textContent = 'Correct!';
+    score++;
+  } else {
+    feedbackEl.textContent = 'Wrong!';
+    secondsLeft -= 15;
   }
+
+  indexOfCurrentQuestion++;
+  renderNextQuestion();
+}
+
+function quizComplete() {
+  clearInterval(timer);
+  timerEl.textContent = 'All done!';
+  contentEl.classList.add('hide');
+  resultsEl.classList.remove('hide');
+  feedbackEl.classList.add('hide');
 }
