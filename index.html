@@ -1,19 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="assets/style.css" />
-    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Code Quiz Challenge</title>
 </head>
+
 <body>
-    <button class="start-button">Start Quiz</button>
+    <header>
+        <nav>
+            <div class="highscores"><a href="highscores.html">View Highscores</a></div>
+            <div>Time: <span class="timer-count">75</span></div>
+        </nav>
+    </header>
 
-    <section>
-        <div class="timer-count">75</div>
-    </section>
+    <div class="code-challenge">
+        <h1>Coding Quiz Challenge</h1>
+        <p>Answer the following code-related questions within the time limit. Keep in mind that incorrect answers
+            will penalize your score/time by 10 seconds!</p>
+        <button class="start-quiz start-btn">Start Quiz</button>
+    </div>
 
-    <script src="assets/script.js"></script>
+    <main>
+        <section class="quiz-questions hide" id="quiz-questions">
+            <h1 class="questions" id="questions"></h1>
+            <div class="answer" id="answer">
+                <div class="choices">
+                    <button id="1"></button>
+                </div>
+                <div class="choices">
+                    <button id="2"></button>
+                </div>
+                <div class="choices">
+                    <button id="3"></button>
+                </div>
+                <div class="choices">
+                    <button id="4"></button>
+                </div>
+            </div>
+        </section>
+
+        <div class="quiz-complete hide" id="quiz-complete">
+            <h1 class="all-done">All done!</h1>
+            <p>Your final score is <span class="score"></span></p>
+            <p><em>Enter Initials:</em>
+                <input type="text" class="initials">
+                <button class="submit-score">Submit</button>
+            </p>
+        </div>
+
+        <div class="feedback" id="feedback"></div>
+    </main>
+
+    <footer>
+        <h4>Made by Brian Autieri 2023</h4>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
+
 </html>
